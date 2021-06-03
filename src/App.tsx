@@ -1,31 +1,51 @@
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { ThemeProvider } from "styled-components"
+import { Header } from './Components/index';
 import { GlobalStyles } from './GlobalStyle/GlobalStyles';
-import * as s from "./style.app"
 
 function App() {
 
+  const theme = {
+    defaultColor: "#fff",
+    LightText: "#4d4d4d"
+  }
+
+  const AuthenticatedRoutes = () => {
+    return (
+      <Router basename={process.env.PUBLIC_URL}>
+        <Route path="/" exact>
+
+        </Route>
+      </Router >
+    )
+  }
+
   return (
     <React.Fragment>
-      <GlobalStyles />
 
-      <s.Wrapper>
-        <div className="txt">
-          <img src="https://image.flaticon.com/icons/png/512/1038/1038726.png" alt="imagem palhaço" />
-          <h1>aguarde um minuto...</h1>
-        </div>
+      <Router>
 
-        <s.Loading>
-          <div className="obj"></div>
-          <div className="obj"></div>
-          <div className="obj"></div>
-          <div className="obj"></div>
-          <div className="obj"></div>
-          <div className="obj"></div>
-          <div className="obj"></div>
-          <div className="obj"></div>
-        </s.Loading>
+        <ThemeProvider theme={theme}>
 
-      </s.Wrapper>
+          <GlobalStyles />
+
+          <Header />
+
+          <Switch>
+            <Route path="/" exact>
+
+            </Route>
+            <Route component={AuthenticatedRoutes} />
+          </Switch>
+
+        </ThemeProvider>
+
+      </Router>
 
 
     </React.Fragment>
