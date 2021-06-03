@@ -5,12 +5,16 @@ import {
   Route,
 } from "react-router-dom";
 import { ThemeProvider } from "styled-components"
-import { Header } from './Components/index';
+import { Header } from './Components/Nav/index';
 import { GlobalStyles } from './GlobalStyle/GlobalStyles';
+import { Home } from './routes/Home';
 
 function App() {
 
+  const [isOpen, setIsOpen] = React.useState<boolean>(false)
+
   const theme = {
+    primaryColor: "##F9522A",
     defaultColor: "#fff",
     LightText: "#4d4d4d"
   }
@@ -24,6 +28,7 @@ function App() {
       </Router >
     )
   }
+  
 
   return (
     <React.Fragment>
@@ -32,13 +37,13 @@ function App() {
 
         <ThemeProvider theme={theme}>
 
-          <GlobalStyles />
+          <GlobalStyles/>
 
-          <Header />
+          <Header isOpen={isOpen} setIsOpen={setIsOpen}/>
 
           <Switch>
             <Route path="/" exact>
-
+                <Home/>
             </Route>
             <Route component={AuthenticatedRoutes} />
           </Switch>

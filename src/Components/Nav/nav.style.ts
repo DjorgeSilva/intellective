@@ -8,9 +8,13 @@ interface Props {
 export const Wrapper = styled.header`
     width: 100%;
     height: 50px;
-    background-color: #CDCDCD;
+    background-color: #fff;
     position: relative;
     z-index:10;
+
+    @media (min-width: 1050px){
+        background: transparent;
+    }
 `
 
 export const Nav = styled.header`
@@ -32,6 +36,11 @@ export const WrapperLogo = styled.div`
 
     img{
         width: 180px;
+        margin-left: 10px;
+
+        @media (max-width: 500px){
+            width: 110%;
+        }
     }
 `
 
@@ -51,14 +60,14 @@ export const WrapperIconeMenu = styled.div`
 `
 export const SideBar = styled.div.attrs((props: Props) => {
     return {
-        isOpen: props.isOpen,  // <-- add this line
+        isOpen: props.isOpen, 
         style: {
             left: props.isOpen? '0' : '-2000px'
         },
     };
 })`
 
-    width: 280px;
+    width: 300px;
     height: 100vh;
     background-color: #fff;
     z-index: 100;

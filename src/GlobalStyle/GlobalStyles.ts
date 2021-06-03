@@ -1,5 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
+type Props = {
+    isOpen: boolean;
+    setIsOpen: (active: boolean) => void;
+}
+
 export const GlobalStyles = createGlobalStyle`
     *{
         margin:0;

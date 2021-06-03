@@ -1,13 +1,18 @@
 import React from 'react'
 import * as s from "./nav.style"
-import logo from "../img/logo.png"
+import logo from "../../img/logo.png"
 import { FiMenu } from "react-icons/fi"
 import { IoClose } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
-export const Header: React.FC = (): JSX.Element => {
 
-    const [isOpen, setIsOpen] = React.useState<boolean>(false)
+type Props = {
+    isOpen: boolean;
+    setIsOpen: (active: boolean) => void;
+}
+
+export const Header: React.FC<Props> = ({isOpen, setIsOpen}:Props): JSX.Element => {
+
 
     //style Link
     const styleLink = {
@@ -33,7 +38,7 @@ export const Header: React.FC = (): JSX.Element => {
 
             <s.SideBar isOpen={isOpen}>
 
-                <IoClose className="icone-close"/>
+                <IoClose className="icone-close" onClick={()=> setIsOpen(!isOpen)}/>
 
                 <ul>
                     <li>
