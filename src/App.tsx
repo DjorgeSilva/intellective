@@ -19,6 +19,8 @@ function App() {
     defaultColor: "#fff",
     ligthText: "#4d4d4d",
     darkText: "#333",
+    colorAmaze: "#018ABE",
+    colorMarvel:"#27AE60", 
   
     //fonts:
     primaryFont: 'Roboto, sans-serif',

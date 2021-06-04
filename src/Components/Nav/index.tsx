@@ -58,8 +58,8 @@ export const Header: React.FC<Props> = ({ isOpen, setIsOpen }: Props): JSX.Eleme
                                 </s.FloatingMenu>
 
                             </li>
-                            <li onMouseEnter={()=> setShowSubMenu(false)}><Link to="/" style={styleLink} className="link">About us</Link></li>
-                            <li onMouseEnter={()=> setShowSubMenu(false)}><Link to="/" style={styleLink} className="link">Contact us</Link></li>
+                            <li onMouseEnter={()=> setShowSubMenu(true)}><Link to="/" style={styleLink} className="link">About us</Link></li>
+                            <li onMouseEnter={()=> setShowSubMenu(true)}><Link to="/" style={styleLink} className="link">Contact us</Link></li>
                         </ul>
                     </s.MenuDesktop>
 

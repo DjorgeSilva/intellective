@@ -14,7 +14,6 @@ export const Fundo = styled.div`
 export const Wrapper = styled.div`
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
@@ -30,6 +29,7 @@ export const BannerTxt = styled.div`
     height: fit-content;
     margin-top: 20px;
     text-align: center;
+
 
     @media (min-width: 1050px){
         text-align: left;
