@@ -72,11 +72,12 @@ export const GridProducts = styled.div`
         width: 100%;
         height: fit-content;
         display: flex;
+        margin: 0 auto;
 
         .item-coluna{
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
 
 
@@ -89,6 +90,8 @@ export const GridProducts = styled.div`
             }
 
             p{
+                width: 90%;
+                height: 80px;
                 color: #4d4d4d;
                 margin: 25px 0;
                 text-align: center;
@@ -128,6 +131,13 @@ export const GridProducts = styled.div`
                 @media (max-width: 600px){
                     margin-bottom: 50px;
                 }
+            }
+        }
+        
+
+        .last-column{
+            @media (min-width: 600px){
+                padding-top: 15px;
             }
         }
     }

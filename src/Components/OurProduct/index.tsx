@@ -44,7 +44,7 @@ export const OurProduct: React.FC = (): JSX.Element => {
                         </Link>
                     </Col>
 
-                    <Col xs={12} md={4} className="item-coluna">
+                    <Col xs={12} md={4} className="item-coluna last-column">
                         <img src={wonderLogo} alt="produto - wonder" />
                         <p>Build engaging personalized and beautiful websites for your business​</p>
                         <Link to="/">
