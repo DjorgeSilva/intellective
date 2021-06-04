@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 interface Props {
     isOpen: boolean;
+    submenu: boolean;
 }
 
 
@@ -12,9 +13,10 @@ export const Wrapper = styled.header`
     position: relative;
     z-index:10;
 
-    @media (min-width: 1050px){
+
+     @media (min-width: 1050px){
         background: transparent;
-    }
+    } 
 `
 
 export const Nav = styled.header`
@@ -24,6 +26,10 @@ export const Nav = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 1050px){
+        padding-top: 55px;
+    } 
 `
 
 export const WrapperLogo = styled.div`
@@ -31,7 +37,7 @@ export const WrapperLogo = styled.div`
     height: 100%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     img{
@@ -57,12 +63,117 @@ export const WrapperIconeMenu = styled.div`
         font-size: 2rem;
     }
 
+    @media (min-width: 1050px){
+        display: none;
+    }
+
 `
+
+
+export const MenuDesktop = styled.div`
+    width: calc(100% - 38%);
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    ul{
+        width: 400px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        li{
+            text-transform: uppercase;
+            font-size: .9rem;
+            font-weight: 600;
+            position: relative;
+
+            .link{
+                color: #333;
+                &:hover{
+                    color: ${props => props.theme.primaryColor};
+                }
+
+                &:hover + .icone-dropdown{
+                    color: ${props => props.theme.primaryColor};
+                } 
+            }
+
+            .icone-dropdown{
+                font-size:1.3rem;
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    @media (max-width: 1050px){
+        display: none;
+    }
+
+`
+
+
+export const FloatingMenu = styled.div.attrs((props: Props) => {
+    return {
+        submenu: props.submenu,
+        style: {
+            display: props.submenu? "none": "block"
+        },
+    };
+})`
+    width: 150px;
+    height: 120px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #CDCDCD;
+
+    position: absolute;
+    top: 40px;
+    left: -10px;
+
+    nav{
+        width: 100%;
+        height: 100%;
+
+        ul{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            padding-left: 10px;
+            margin: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+
+            li{
+
+                .link{
+                    color: #333;
+                    font-size: .8rem;
+                    &:hover{
+                        color: ${props => props.theme.primaryColor};
+                    }
+
+                    &:hover + .icone-dropdown{
+                        color: ${props => props.theme.primaryColor};
+                    } 
+                }
+
+            }
+        }
+    }
+`
+
+
 export const SideBar = styled.div.attrs((props: Props) => {
     return {
-        isOpen: props.isOpen, 
+        isOpen: props.isOpen,
         style: {
-            left: props.isOpen? '0' : '-2000px'
+            left: props.isOpen ? '0' : '-2000px'
         },
     };
 })`
@@ -101,9 +212,14 @@ export const SideBar = styled.div.attrs((props: Props) => {
             .link{
                 text-transform: uppercase;
                 font-weight: 600;
-                color: ${props => props.theme.LightText};
+                color: #333;
                 font-size: .9rem;
+
+                &:hover{
+                    color: ${props => props.theme.primaryColor};
+                }
             }
         }
     }
 `
+

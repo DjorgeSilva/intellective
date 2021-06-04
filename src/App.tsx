@@ -14,9 +14,14 @@ function App() {
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
   const theme = {
-    primaryColor: "##F9522A",
+    //colors:
+    primaryColor: "#F9522A",
     defaultColor: "#fff",
-    LightText: "#4d4d4d"
+    ligthText: "#4d4d4d",
+    darkText: "#333",
+  
+    //fonts:
+    primaryFont: 'Roboto, sans-serif',
   }
 
   const AuthenticatedRoutes = () => {

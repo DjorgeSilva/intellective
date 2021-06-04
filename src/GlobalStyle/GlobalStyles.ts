@@ -24,6 +24,11 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         background: #fff;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    ul{
+        list-style: none;
     }
     
     p {

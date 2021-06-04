@@ -31,27 +31,46 @@ export const BannerTxt = styled.div`
     margin-top: 20px;
     text-align: center;
 
+    @media (min-width: 1050px){
+        text-align: left;
+    }
+
     h1{
+        width: 100%;
         font-weight: 600;
-        font-size: clamp(2.5rem, 3vw, 4rem);
+        font-size: clamp(3rem, 3vw, 4rem);
+        color: ${props => props.theme.darkText};
         span{
-            color: #F9522A;
+
+            @media (min-width: 1050px){
+                color: ${props => props.theme.primaryColor};
+            }
         }
     }
 
     p{
         font-size: clamp(1.3rem, 3vw, 1.5rem);
+        color: ${props => props.theme.ligthText};
         margin: 30px;
+
+        @media (min-width: 1050px){
+            margin-left: 0;
+        }
+
     }
 
     button{
         padding: 8px 25px;
-        background: #F9522A;
-        color: #fff;
+        background: ${props => props.theme.primaryColor};
+        color: ${props => props.theme.defaultColor};
         font-weight: 500;
         text-transform: uppercase;
         border: none;
         border-radius: 5px; 
+
+        @media (min-width: 1050px){
+            padding: 15px 32px;
+        }
     }
 `
 
