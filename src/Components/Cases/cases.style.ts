@@ -39,6 +39,22 @@ export const Wrapper = styled.div`
                 object-fit: cover;
                 border-radius: 10px;
                 margin-top: 50px;
+                position: relative;
+            }
+
+            .inner-info-img{
+                position: absolute;
+                top: 80px;
+                left: 30px;
+                z-index: 10000;
+                background: #F3F3F3;
+                border-radius: 10px;
+                padding: 0 10px;
+                text-align: center;
+
+                p{
+                    font-size: .8rem;
+                }
             }
 
             p, h5, h6{

@@ -20,8 +20,8 @@ function App() {
     ligthText: "#4d4d4d",
     darkText: "#333",
     colorAmaze: "#018ABE",
-    colorMarvel:"#27AE60", 
-  
+    colorMarvel: "#27AE60",
+
     //fonts:
     primaryFont: 'Roboto, sans-serif',
   }
@@ -35,7 +35,7 @@ function App() {
       </Router >
     )
   }
-  
+
 
   return (
     <React.Fragment>
@@ -44,13 +44,13 @@ function App() {
 
         <ThemeProvider theme={theme}>
 
-          <GlobalStyles/>
+          <GlobalStyles />
 
-          <Header isOpen={isOpen} setIsOpen={setIsOpen}/>
+          <Header isOpen={isOpen} setIsOpen={setIsOpen} />
 
           <Switch>
             <Route path="/" exact>
-                <Home/>
+              <Home />
             </Route>
             <Route component={AuthenticatedRoutes} />
           </Switch>

@@ -42,7 +42,7 @@ export const Header: React.FC<Props> = ({ isOpen, setIsOpen }: Props): JSX.Eleme
 
                     <s.MenuDesktop>
                         <ul>
-                            <li><Link to="/" style={styleLink} className="link" onMouseEnter={()=> setShowSubMenu(!submenu)} >
+                            <li><Link to="/" style={styleLink} className="link" onMouseEnter={()=> setShowSubMenu(!submenu)}>
                                 Products
                                 </Link>
                                 <RiArrowDropDownLine className="icone-dropdown" />

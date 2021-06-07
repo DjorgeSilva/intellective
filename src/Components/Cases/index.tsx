@@ -25,6 +25,9 @@ export const Cases: React.FC = (): JSX.Element => {
 
                 <Col xs={12} md={3} className="coluna coluna-imagem">
                     <img src={casesItem} alt="Nosso pessoal" />
+                    <div className="inner-info-img">
+                        <p>11th <br/>May</p>
+                    </div>
 
                     <Link to="/" className="link-case" style={styleLink}>
                         <p>Case Study</p>

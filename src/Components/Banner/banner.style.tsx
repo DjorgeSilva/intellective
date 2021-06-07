@@ -3,24 +3,30 @@ import bannerBG from "../../img/banner-bg.jpg"
 
 export const Fundo = styled.div`
     width: 100%;
-    height: calc(100vh - 50px);
+    height: 100vh;
     background-image: url(${bannerBG});
     position: relative;
     top: -50px;
 
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px;
 `
 
 export const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
     align-items: center;
 
+
     @media (min-width: 1085px){
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 `
 
@@ -29,6 +35,7 @@ export const BannerTxt = styled.div`
     height: fit-content;
     margin-top: 20px;
     text-align: center;
+
 
 
     @media (min-width: 1050px){
