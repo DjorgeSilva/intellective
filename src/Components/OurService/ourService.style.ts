@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
     width: 100%;
     height: fit-content;
     background: #F9F9F9;
+    padding-bottom: 90px;
 
     .container{
         margin: 0 auto;
